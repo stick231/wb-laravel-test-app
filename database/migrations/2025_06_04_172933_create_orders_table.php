@@ -23,12 +23,8 @@ return new class extends Migration
             $table->string('brand');
 
             $table->bigInteger('barcode');
-            $table->unsignedBigInteger('income_id');
-            $table->foreign('income_id')
-                    ->references('id')
-                    ->on('incomes')
-                    ->onDelete('cascade');
-            $table->bigInteger('nm_id');
+            $table->string('income_id'); // because data in host incorrect and dont work 
+            $table->string('nm_id');
 
             $table->string('total_price', 20);
             $table->integer('discount_percent');

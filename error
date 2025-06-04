@@ -54,3 +54,33 @@ Stack trace:
 #22 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1234): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #23 /Users/apple/Projects/test-work-laravel-send-request/app/artisan(16): Illuminate\Foundation\Application->handleCommand(Object(Symfony\Component\Console\Input\ArgvInput))
 #24 {main}
+
+Importing sales....
+Sales imported successfully!
+NFO: PDOException: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'nm_id' at row 12 in /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php:53
+Stack trace:
+#0 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(53): PDOStatement->execute()
+#1 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(809): Illuminate\Database\MySqlConnection->{closure:Illuminate\Database\MySqlConnection::insert():42}('insert into `sa...', Array)
+#2 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Database/Connection.php(776): Illuminate\Database\Connection->runQueryCallback('insert into `sa...', Array, Object(Closure))
+#3 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(42): Illuminate\Database\Connection->run('insert into `sa...', Array, Object(Closure))
+#4 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3747): Illuminate\Database\MySqlConnection->insert('insert into `sa...', Array)
+#5 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(2205): Illuminate\Database\Query\Builder->insert(Array)
+#6 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->__call('insert', Array)
+#7 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2449): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'insert', Array)
+#8 /Users/apple/Projects/test-work-laravel-send-request/app/app/Services/PaginatedApiFetcher.php(43): Illuminate\Database\Eloquent\Model->__call('insert', Array)
+#9 /Users/apple/Projects/test-work-laravel-send-request/app/app/Console/Commands/ImportSales.php(33): App\Services\PaginatedApiFetcher->paginateData('http://109.73.2...', '2020-10-10', '2025-10-10', 'E6kUTYrYwZq2tN4...', 'sales')
+#10 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\Console\Commands\ImportSales->handle(Object(App\Services\PaginatedApiFetcher))
+#11 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\Container\BoundMethod::{closure:Illuminate\Container\BoundMethod::call():35}()
+#12 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(96): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#13 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#14 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Container/Container.php(754): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#15 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\Container\Container->call(Array)
+#16 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/symfony/console/Command/Command.php(318): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#17 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#18 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/symfony/console/Application.php(1092): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/symfony/console/Application.php(341): Symfony\Component\Console\Application->doRunCommand(Object(App\Console\Commands\ImportSales), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/symfony/console/Application.php(192): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(197): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 /Users/apple/Projects/test-work-laravel-send-request/app/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1234): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 /Users/apple/Projects/test-work-laravel-send-request/app/artisan(16): Illuminate\Foundation\Application->handleCommand(Object(Symfony\Component\Console\Input\ArgvInput))
+#24 {main}

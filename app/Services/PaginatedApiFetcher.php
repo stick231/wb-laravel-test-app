@@ -37,7 +37,7 @@ class PaginatedApiFetcher{
             if(empty($response)){
                 break;
             }
-
+            //добавить проверку count$data чтобы не было много пустых страниц
             try{
                 $data = $response['data'] ?? [];
                 $model->insert($data);

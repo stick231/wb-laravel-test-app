@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -63,3 +64,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 =======
 # wb-laravel-test-app
 >>>>>>> b09ce42 (Initial commit)
+=======
+# wb-laravel-test-app
+
+## how to import?
+
+### php artisan app:import-incomes
+### php artisan app:import-orders
+### php artisan app:import-sales
+### php artisan app:import-stocks
+>>>>>>> 8c2cd47 (add mini todo, fix field, add error api data and add mini read.me description)
