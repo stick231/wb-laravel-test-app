@@ -33,11 +33,8 @@ class ImportIncomes extends Command
     {
         $this->info("Importing incomes...");
 
-        $data = $paginatedApiFetcher->paginateData("http://109.73.206.144:6969/api/incomes", "2020-10-01", "2025-10-01", env('api_key'));
+        $paginatedApiFetcher->paginateData("http://109.73.206.144:6969/api/incomes", "2020-10-01", "2025-10-01", env('api_key'), 'incomes');
 
-        if(!empty($data)){
-            Income::insert($data);
-        }
         $this->info("Incomes imported successfully!");
     }
 }

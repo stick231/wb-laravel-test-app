@@ -30,12 +30,7 @@ class ImportSales extends Command
     {
         $this->info("Importing sales....");
 
-        $data = $paginatedApiFetcher->paginateData("http://109.73.206.144:6969/api/sales", "2020-10-10", "2025-10-10", env('api_key'));
-
-        if(!empty($data)){
-            echo count($data);
-            Sales::insert($data);
-        }
+        $paginatedApiFetcher->paginateData("http://109.73.206.144:6969/api/sales", "2020-10-10", "2025-10-10", env('api_key'), 'sales');
 
         $this->info("Sales imported successfully!");
     }

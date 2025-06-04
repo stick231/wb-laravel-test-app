@@ -31,14 +31,10 @@ class ImportStocks extends Command
     {
         $this->info("Importing stocks....");
 
-        $dateFrom = Carbon::today("Europe/Moscow");
+        $dateFrom = Carbon::yesterday("Europe/Moscow");
 
-        $data = $paginatedApiFetcher->paginateData("http://109.73.206.144:6969/api/stocks", $dateFrom, "", env('api_key'));
+        $paginatedApiFetcher->paginateData("http://109.73.206.144:6969/api/stocks", $dateFrom, "", env('api_key'), 'stocks');
 
-        if(!empty($data)){
-            Stock::insert($data);
-        }
-        echo count($data) . "\n";
         $this->info("Stocks imported successfully!");
     }
 }

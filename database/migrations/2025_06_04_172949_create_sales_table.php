@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sales', function (Blueprint $table) {
-            $table->bigInteger('g_number');
+            $table->string('g_number');
             $table->date('date');
             $table->date('last_change_date');
             $table->string('supplier_article');
@@ -35,14 +35,14 @@ return new class extends Migration
             $table->string('sale_id');
             $table->string('odid')->nullable();
             $table->string('spp');
-            $table->string('for_pay', 20)->nullable(); // Длина 20 для запаса
-            $table->string('finished_price', 20)->nullable();
-            $table->string('price_with_disc', 20)->nullable();
+            $table->string('for_pay')->nullable(); // Длина 20 для запаса
+            $table->string('finished_price')->nullable();
+            $table->string('price_with_disc')->nullable();
             $table->unsignedBigInteger('nm_id')->nullable();
-            $table->string('subject', 16)->nullable();
-            $table->string('category', 16)->nullable();
-            $table->string('brand', 16)->nullable();
-            $table->string('is_storno', 10)->nullable();
+            $table->string('subject')->nullable();
+            $table->string('category')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('is_storno')->nullable();
         });
     }
 

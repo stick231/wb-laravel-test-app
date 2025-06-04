@@ -31,11 +31,8 @@ class ImportOrders extends Command
     {
         $this->info("Importing orders....");
 
-        $data = $paginatedApiFetcher->paginateData("http://109.73.206.144:6969/api/orders", "2020-10-10", "2025-10-10", env('api_key'));
+        $paginatedApiFetcher->paginateData("http://109.73.206.144:6969/api/orders", "2020-10-10", "2025-10-10", env('api_key'), 'orders');
 
-        if(!empty($data)){
-            Order::insert($data);
-        }
         $this->info("Orders imported successfully!");
     }
 }

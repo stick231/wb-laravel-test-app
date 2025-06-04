@@ -12,15 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->string('g_number', 50);
-            $table->string('supplier_article', 50);
-            $table->string('tech_size', 50);
-            $table->string('warehouse_name', 100);
-            $table->string('oblast', 100);
-            $table->string('odid', 50);
-            $table->string('subject', 50);
-            $table->string('category', 50);
-            $table->string('brand', 50);
+            $table->string('g_number');
+            $table->string('supplier_article');
+            $table->string('tech_size');
+            $table->string('warehouse_name');
+            $table->string('oblast');
+            $table->string('odid');
+            $table->string('subject');
+            $table->string('category');
+            $table->string('brand');
 
             $table->bigInteger('barcode');
             $table->unsignedBigInteger('income_id');
